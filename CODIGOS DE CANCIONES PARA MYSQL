@@ -1,0 +1,7 @@
+INSERT INTO canciones_bd(album, titulo, artista, genero, idioma) 
+VALUES
+('static & silence', 'Summertime', 'indie pop, dream pop y rock alternativo.', 'Inglés'),
+('OK Computer', 'No Surprises', 'Radiohead', 'rock alternativo, art rock', 'Inglés'),
+('Discovery', 'Digital Love', 'Daft Punk', 'electrónica, house, synthpop', 'Inglés'),
+('Un Verano Sin Ti', 'Tití Me Preguntó', 'Bad Bunny', 'reguetón, trap latino', 'Español'),
+('Back to Black', 'Rehab', 'Amy Winehouse', 'soul, R&B, jazz', 'Inglés');
