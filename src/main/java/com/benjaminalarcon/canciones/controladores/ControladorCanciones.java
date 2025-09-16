@@ -5,12 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 
 import com.benjaminalarcon.canciones.modelos.Canciones;
 import com.benjaminalarcon.canciones.repositorios.RepositorioCanciones;
 import com.benjaminalarcon.canciones.servicios.ServicioCanciones;
+
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 
@@ -40,5 +46,18 @@ public class ControladorCanciones {
         return "detalleCancion";
     }
     
+    @GetMapping("/canciones/formulario/agregar/{id}")
+    public String formularioAgregarCancion(@ModelAttribute("Cancion") Canciones Cancion){
+        return "formularioCancion";
+    }
     
+    @PostMapping("/agregar/cancion")
+    public String agregarCancion(@Valid @ModelAttribute("Cancion") Canciones Cancion, BindingResult validaciones){
+        if(validaciones.hasErrors()){
+            return "agregarCancion";
+        }
+        this.servicioCanciones.agregarCancion(Cancion);
+        return "redirect:/canciones";
+
+    }
 }
