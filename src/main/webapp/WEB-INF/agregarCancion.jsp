@@ -11,7 +11,7 @@
     </head>
     <body>
         <h1>Agregar Cancion</h1>
-        <form:form action="/agregar/cancion" method="POST" modelAttribute="Cancion">
+        <form:form action="/canciones/procesa/agregar" method="POST" modelAttribute="Cancion">
             <div>
                 <form:label path="titulo">
                     Titulo:
@@ -49,6 +49,9 @@
             </div>
             <button>
                 Agregar
+            </button>
+            <button>
+                <a href="/canciones">Volver</a>
             </button>
         </form:form>
     </body>

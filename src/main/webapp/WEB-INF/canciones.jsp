@@ -17,5 +17,8 @@
             <h2><a href="/canciones/detalle/${cancion.id}">Detalle</a></h2>
         </c:forEach>
     </div>
+    <button>
+        <a href="/canciones/formulario/agregar/0">Agregar Nueva Cancion</a>
+    </button>
 </body>
 </html>

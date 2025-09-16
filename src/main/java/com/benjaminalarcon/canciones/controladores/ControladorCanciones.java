@@ -47,11 +47,13 @@ public class ControladorCanciones {
     }
     
     @GetMapping("/canciones/formulario/agregar/{id}")
-    public String formularioAgregarCancion(@ModelAttribute("Cancion") Canciones Cancion){
-        return "formularioCancion";
+    public String formularioAgregarCancion(@ModelAttribute("Cancion") Canciones Cancion, @PathVariable Long id, Model modelo){
+        Canciones cancionA = servicioCanciones.obtenerCancionesporId(id);
+        modelo.addAttribute("cancion", cancionA);
+        return "agregarCancion";
     }
     
-    @PostMapping("/agregar/cancion")
+    @PostMapping("/canciones/procesa/agregar")
     public String agregarCancion(@Valid @ModelAttribute("Cancion") Canciones Cancion, BindingResult validaciones){
         if(validaciones.hasErrors()){
             return "agregarCancion";
