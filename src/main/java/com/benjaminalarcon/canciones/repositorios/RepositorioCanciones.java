@@ -19,6 +19,10 @@ public interface RepositorioCanciones extends CrudRepository<Canciones, Long>{
     /*
      * INSERT INTO canciones()
      * VALUES();
+     * 
+     * UPDATE canciones
+     * SET cancion
+     * WHERE id
      */
     Canciones save(Canciones Cancion);
 }

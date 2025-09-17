@@ -16,8 +16,14 @@
             <h4>Album: ${cancion.album}</h4>
             <h4>Genero: ${cancion.genero}</h4>
             <h4>Idioma: ${cancion.idioma}</h4>
+            <form method="GET" action="/canciones/formulario/editar/${cancion.id}">
+                <button> 
+                    Editar 
+                </button>
+            </form>
         
     </div>
     <button><a href="/canciones">Regresar</a></button>
+    
 </body>
 </html>
