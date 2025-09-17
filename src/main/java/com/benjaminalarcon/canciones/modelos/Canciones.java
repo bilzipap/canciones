@@ -111,7 +111,7 @@ public class Canciones {
     @PrePersist
     protected void onCreate(){
         this.fechaCreacion = new Date();
-        this.fechaActualizacion = this.fechaCreacion;
+        this.fechaActualizacion = new Date();
     }
 
     @PreUpdate
