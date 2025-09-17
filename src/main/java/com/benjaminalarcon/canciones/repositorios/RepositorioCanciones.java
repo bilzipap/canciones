@@ -25,4 +25,12 @@ public interface RepositorioCanciones extends CrudRepository<Canciones, Long>{
      * WHERE id
      */
     Canciones save(Canciones Cancion);
+
+    /*
+     * 
+     * DELETE FROM canciones
+     * WHERE id = id;
+     * 
+     */
+    void deleteById(Long id);
 }

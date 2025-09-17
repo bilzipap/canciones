@@ -13,6 +13,7 @@ import com.benjaminalarcon.canciones.servicios.ServicioCanciones;
 
 import jakarta.validation.Valid;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -82,5 +83,10 @@ public class ControladorCanciones {
         return "redirect:/canciones";
     }
 
+    @DeleteMapping("/canciones/eliminar/{id}")
+    public String procesarEliminarCancion(@PathVariable Long id){
+        this.servicioCanciones.eliminarCancion(id);
+        return "redirect:/canciones";
+    }
     
 }

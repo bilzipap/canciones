@@ -21,6 +21,13 @@
                     Editar 
                 </button>
             </form>
+            <form method="POST" action="/canciones/eliminar/${cancion.id}">
+                <input type="hidden" name="_method" value="DELETE">
+                <button>
+                    Eliminar
+                </button>
+                
+            </form>
         
     </div>
     <button><a href="/canciones">Regresar</a></button>
